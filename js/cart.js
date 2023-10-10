@@ -7,7 +7,7 @@ tBody.innerHTML = cartLs.map(
   <tr>
     <th scope="row">${product.id}</th>
     <td>${product.title}</td>
-    <td>${product.price}</td>
+    <td id-price-prod=${product.id}>${product.price}</td>
     <td>
      <input type='number' id="${product.id}" class="form-control w-50" value="1">
     </td>
@@ -38,12 +38,12 @@ const inputsCount = document.querySelectorAll("input");
 const changeValue = (ev) => {
   const { id, value } = ev.target;
   const price = parseFloat(
-    document.querySelector(`[id-prod="${id}"]`).textContent
+    document.querySelector(`[id-price-prod="${id}"]`).textContent
   );
 
   const res = price * value;
   const total = document.querySelector(`[id-prod="${id}"]`);
-  total.innerHTML = res;
+  total.innerHTML = res.toFixed(2);
 };
 
 inputsCount.forEach((input) => {

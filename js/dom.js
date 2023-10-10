@@ -80,8 +80,9 @@ const enviarRegistro = (ev) => {
         id,
         usuario,
         contrasenia,
-        role: "user",
+        role: "admin",
         login: true,
+        deleted: false,
       };
 
       users.push(newUser);

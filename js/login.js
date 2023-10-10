@@ -19,7 +19,7 @@ const sendForm = (ev) => {
   const filterUser = users.filter((userLs) => userLs.usuario === user);
 
   if (filterUser.length > 0) {
-    if (filterUser[0].contrasenia === pass) {
+    if (filterUser[0].contrasenia === pass && !filterUser[0].deleted) {
       filterUser[0].login = true;
 
       localStorage.setItem("users", JSON.stringify(users));
@@ -28,7 +28,11 @@ const sendForm = (ev) => {
       filterUser[0].role === "admin"
         ? (location.href = "../html/admin.html")
         : (location.href = "../html/user.html");
+    } else {
+      alert("Usuario y/o Contraseña incorrecto Deleted");
     }
+  } else {
+    alert("Usuario y/o Contraseña incorrecto");
   }
 };
 

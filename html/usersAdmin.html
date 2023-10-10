@@ -16,7 +16,7 @@
     <header>
       <nav class="navbar navbar-expand-lg bg-success">
         <div class="container-fluid">
-          <a class="navbar-brand" href="./user.html">Logo</a>
+          <a class="navbar-brand" href="./admin.html">Logo</a>
           <button
             class="navbar-toggler"
             type="button"
@@ -34,23 +34,19 @@
                 <a
                   class="nav-link active"
                   aria-current="page"
-                  href="../html/user.html"
+                  href="../html/admin.html"
                   >Inicio</a
                 >
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Sobre Nosotros</a>
+                <a class="nav-link" href="./productsAdmin.html"
+                  >Crear Producto</a
+                >
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Contacto</a>
-              </li>
-
-              <li class="nav-item">
-                <a class="nav-link" href="#">Favoritos</a>
-              </li>
-
-              <li class="nav-item">
-                <a class="nav-link" href="#">Carrito</a>
+                <a class="nav-link" href="./usersAdmin.html"
+                  >Crear un Usuario</a
+                >
               </li>
             </ul>
 
@@ -70,10 +66,8 @@
           <tr>
             <th scope="col">ID</th>
             <th scope="col">Nombre</th>
-            <th scope="col">Precio</th>
-            <th scope="col">Cantidad</th>
-            <th scope="col">Total</th>
-            <th scope="col">Borrar</th>
+            <th scope="col">Role</th>
+            <th scope="col">Acciones</th>
           </tr>
         </thead>
         <tbody id="tBody"></tbody>
@@ -90,7 +84,6 @@
       crossorigin="anonymous"
     ></script>
 
-    <script src="../js/cart.js"></script>
-    <script src="../js/user.js"></script>
+    <script src="../js/usersAdmin.js"></script>
   </body>
 </html>
