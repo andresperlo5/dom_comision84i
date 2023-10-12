@@ -49,3 +49,24 @@ const changeValue = (ev) => {
 inputsCount.forEach((input) => {
   input.addEventListener("input", changeValue);
 });
+
+const payProd = () => {
+  const userLs = JSON.parse(localStorage.getItem("user"));
+
+  Email.send({
+    SecureToken: "92f40e33-a1b2-4325-82e9-d4e93daa6a59",
+    Host: "smtp.elasticemail.com",
+    Username: "andresperlo5@gmail.com",
+    Password: "46A9489E0810CD5D6CA565A93D2762847965",
+    To: userLs.usuario,
+    From: "andresperlo5@gmail.com",
+    Subject: "Pago Exitoso!!!",
+    Body: `<h1>Gracias por tu compra</h1>`,
+  }).then((message) => {
+    if (message === "OK") {
+      alert("Revisa tu correo. Pago exitoso");
+    } else {
+      console.log(message);
+    }
+  });
+};

@@ -49,10 +49,16 @@ tBody.innerHTML = users
                     }' name='user' class="form-control" id="idInputUser" aria-describedby="emailHelp">
                   </div>
                   <div class="mb-3">
-                    <label for="exampleInputPassword1" class="form-label">Role</label>
-                    <input type="text" value='${
-                      user.role
-                    }' name='role' class="form-control" id="idInputRole">
+                    <select class="form-select" aria-label="Default select example">
+                      <option >Role Actual: ${
+                        user.role === "admin" ? "Administrador" : "Usuario"
+                      }</option>
+                      <option value="${
+                        user.role === "admin" ? "user" : "admin"
+                      }">${
+        user.role === "admin" ? "Usuario" : "Administrador"
+      }</option>
+                    </select>
                   </div>
                  
                   <button type="button" class="btn btn-primary" onclick='saveChange(${

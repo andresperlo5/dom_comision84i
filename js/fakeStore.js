@@ -16,7 +16,7 @@ divCards.innerHTML = products
   .map(
     (product) =>
       `
-       <div class="col-12 col-md-6 col-lg-3">
+       <div class="col-12 col-md-6 col-lg-3 my-3">
           <div class="card">
           <img
               src="${product.image}"
@@ -24,8 +24,8 @@ divCards.innerHTML = products
               alt="..."
           />
           <div class="card-body">
-              <h5 class="card-title">${product.title}</h5>
-              <p class="card-text">
+              <h5 class="card-title card-title-ellipse">${product.title}</h5>
+              <p class="card-text card-p-ellipse">
               ${product.description}
               </p>
               <a href="../html/product.html?id=${product.id}" class="btn btn-primary botonGoClass"

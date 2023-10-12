@@ -19,6 +19,18 @@ footer{
     object-fit: cover;
 }
 .class-img{
-    height: 30vh;
+    height: 50vh;
     object-fit: cover;
+}
+
+.card-p-ellipse{
+    white-space: nowrap; 
+    overflow: hidden;
+    text-overflow: ellipsis; 
+}
+
+.card-title-ellipse{
+    white-space: nowrap; 
+    overflow: hidden;
+    text-overflow: ellipsis; 
 }

@@ -80,7 +80,7 @@ const enviarRegistro = (ev) => {
         id,
         usuario,
         contrasenia,
-        role: "admin",
+        role: "user",
         login: true,
         deleted: false,
       };
@@ -98,6 +98,19 @@ const enviarRegistro = (ev) => {
         "te redireccionaremos en 1 segundo!",
         "success"
       );
+
+      Email.send({
+        SecureToken: "92f40e33-a1b2-4325-82e9-d4e93daa6a59",
+        Host: "smtp.elasticemail.com",
+        Username: "andresperlo5@gmail.com",
+        Password: "46A9489E0810CD5D6CA565A93D2762847965",
+        To: usuario,
+        From: "andresperlo5@gmail.com",
+        Subject: "Bienvenido a nuestra Pagina",
+        Body: `<h1>Bienvenido</h1>`,
+      }).then((message) => {
+        console.log(message);
+      });
 
       setTimeout(() => {
         location.href = "../html/user.html";
